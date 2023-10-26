@@ -3,7 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.main {
+    background: linear-gradient(134deg, #F1F1F1 0%, #FFF 75%);
+}
+
 body {
     font-family: 'Raleway', sans-serif;
-    background: linear-gradient(134deg, #F1F1F1 0%, #FFF 75%);
 }

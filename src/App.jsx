@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from "./components/defaultLayout/header.jsx";
+import Home from "./pages/home.jsx";
 
 const App = () => {
     return (
         <>
-            <Header />
+            <Home />
         </>
     );
 };
