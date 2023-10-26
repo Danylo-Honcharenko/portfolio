@@ -1,10 +1,11 @@
 import React from 'react';
 import "../../assets/scss/main.scss"
 import {routers} from "../../Routes/index.js";
+import Box from "../box.jsx";
 const Header = () => {
     return (
-        <header className="pl-6 pr-6 pt-3 pb-2 md:pl-20 md:pr-20">
-            <div className="header">
+        <header>
+            <Box className="header">
                 <a href={routers[0].path}>
                     <div className="flex items-center gap-2">
                         <div>
@@ -33,7 +34,7 @@ const Header = () => {
                 {/*<div>*/}
                 {/*    */}
                 {/*</div>*/}
-            </div>
+            </Box>
         </header>
     );
 };
