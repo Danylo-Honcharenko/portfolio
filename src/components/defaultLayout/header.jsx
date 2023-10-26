@@ -3,7 +3,7 @@ import "../../assets/scss/main.scss"
 import {routers} from "../../Routes/index.js";
 const Header = () => {
     return (
-        <header className="pl-20 pr-20 pt-3 pb-2">
+        <header className="pl-6 pr-6 pt-3 pb-2 md:pl-20 md:pr-20">
             <div className="header">
                 <a href={routers[0].path}>
                     <div className="flex items-center gap-2">
@@ -17,7 +17,7 @@ const Header = () => {
                         </div>
                     </div>
                 </a>
-                <div>
+                <div className="menu">
                     <nav>
                         <ul className="flex gap-7 text-[#585858]">
                             {routers.map((r, index) => (
@@ -26,6 +26,12 @@ const Header = () => {
                         </ul>
                     </nav>
                 </div>
+                <div className="block md:hidden">
+                    <button>Меню</button>
+                </div>
+                {/*<div>*/}
+                {/*    */} //TODO: Do menu
+                {/*</div>*/}
             </div>
         </header>
     );
