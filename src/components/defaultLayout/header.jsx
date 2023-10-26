@@ -29,8 +29,9 @@ const Header = () => {
                 <div className="block md:hidden">
                     <button>Меню</button>
                 </div>
+                {/*Do menu*/}
                 {/*<div>*/}
-                {/*    */} //TODO: Do menu
+                {/*    */}
                 {/*</div>*/}
             </div>
         </header>
