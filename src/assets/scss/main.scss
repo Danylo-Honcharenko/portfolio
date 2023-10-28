@@ -9,5 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60vh;
+  flex-wrap: wrap;
+  padding-top: 9%;
+  padding-bottom: 9%;
+}
+
+.section_out_vh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

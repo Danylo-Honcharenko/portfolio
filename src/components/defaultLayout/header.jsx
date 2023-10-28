@@ -1,11 +1,11 @@
 import React from 'react';
 import "../../assets/scss/main.scss"
 import {routers} from "../../Routes/index.js";
-import Box from "../box.jsx";
+import Box from "../Box/box.jsx";
 const Header = () => {
     return (
         <header>
-            <Box className="header">
+            <Box className="header" isPadding={true}>
                 <a href={routers[0].path}>
                     <div className="flex items-center gap-2">
                         <div>
