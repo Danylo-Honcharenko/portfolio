@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../assets/scss/main.scss"
-import {routers} from "../../Routes/index.js";
-import Box from "../Box/box.jsx";
+import {routers} from "../../Routes/routes.js";
+import Box from "../Box/Box.jsx";
 const Header = () => {
     return (
         <header>

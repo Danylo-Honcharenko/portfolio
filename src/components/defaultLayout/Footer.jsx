@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from "../Box/box.jsx";
+import Box from "../Box/Box.jsx";
 
 const Footer = () => {
     return (

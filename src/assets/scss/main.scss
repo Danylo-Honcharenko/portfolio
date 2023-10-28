@@ -5,18 +5,37 @@
   padding: 10px 0 10px 0;
 }
 
-.section_opt {
+.section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: 9%;
-  padding-bottom: 9%;
 }
 
-.section_out_vh {
+.padding_section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.padding_section_inside {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.box_padding {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.flex_section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.welcome_section {
+}
+
+.projects_section {
 }

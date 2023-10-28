@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from "./pages/home.jsx";
+import Switch from "./Routes/switch.jsx";
 
 const App = () => {
     return (
         <>
-            <Home />
+            <Switch />
         </>
     );
 };

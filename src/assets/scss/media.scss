@@ -1,5 +1,35 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .box_padding {
+    padding-left: 78px;
+    padding-right: 78px;
+  }
+}
+
+@media screen and (max-width: 778px) {
   .menu {
     display: none;
+  }
+
+  .box_padding {
+    padding-left: 37px;
+    padding-right: 37px;
+  }
+
+  .welcome_section {
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 657px) {
+  .projects_section {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .box_padding {
+    padding-left: 9px;
+    padding-right: 9px;
   }
 }

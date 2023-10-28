@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./defaultLayout/header.jsx";
-import Footer from "./defaultLayout/footer.jsx";
+import Header from "./defaultLayout/Header.jsx";
+import Footer from "./defaultLayout/Footer.jsx";
 
 const Main = ({children}) => {
     return (
