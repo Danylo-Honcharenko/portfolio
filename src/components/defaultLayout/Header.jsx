@@ -30,11 +30,10 @@ const Header = () => {
                 <div className="block md:hidden">
                     <button>Меню</button>
                 </div>
-                {/*Do menu*/}
-                {/*<div>*/}
-                {/*    */}
-                {/*</div>*/}
             </Box>
+            <div>
+                {/*Menu*/}
+            </div>
         </header>
     );
 };

@@ -1,0 +1,45 @@
+version: "3"
+services:
+  strapi:
+    container_name: portfolio_CMS
+    image: strapi/strapi
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: db_CMS
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "1317:1337"
+    networks:
+      - strapi
+    depends_on:
+      - db_CMS
+  db_CMS:
+    container_name: db_CMS
+    platform: linux/amd64
+    restart: unless-stopped
+    env_file: .env
+    image: mariadb:latest
+    environment:
+      MARIADB_USER: ${DATABASE_USERNAME}
+      MARIADB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MARIADB_PASSWORD: ${DATABASE_PASSWORD}
+      MARIADB_DATABASE: ${DATABASE_NAME}
+    volumes:
+      - cms:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - strapi
+
+volumes:
+  cms:
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge

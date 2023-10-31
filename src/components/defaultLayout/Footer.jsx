@@ -8,13 +8,13 @@ const Footer = () => {
                 <div>
                     <p>2023</p>
                 </div>
-                <div className="flex items-center gap-2">
-                    <div>
-                        <a href="#">GitHub</a>
-                    </div>
-                    <div>
-                        <a href="#">Telegram</a>
-                    </div>
+                <div>
+                    <nav>
+                        <ul className="flex gap-2">
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Telegram</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </Box>
         </footer>

@@ -13,6 +13,7 @@ import Java from "../assets/images/java.png";
 import Maven from "../assets/images/maven.png";
 import Docker from "../assets/images/docker.png";
 import Card from "../components/Card/Card.jsx";
+import {projects} from "../utils/rest/index.jsx";
 
 const Home = () => {
 
@@ -26,13 +27,13 @@ const Home = () => {
         {skill: "React"},
     ];
 
-    const projects = [
-        {name: "Book Parser", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-        {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-        {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-        {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-        {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-    ];
+    // const projects = [
+    //     {name: "Book Parser", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
+    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
+    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
+    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
+    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
+    // ];
 
     return (
         <Main>
@@ -99,11 +100,13 @@ const Home = () => {
                     </div>
                 </div>
                 <Box isFlex={true} className="mt-3 gap-2 projects_section">
-                    {projects.slice(0, 4).map((p, index) => (
-                        <Card key={index} image={p.image} link={p.link} width="w-72" height="h-72">
-                            <Text className="text-white">{p.name}</Text>
-                        </Card>
-                    ))}
+                    {
+                        projects().slice(0, 4).map((p, idx) => (
+                            <Card key={idx} image={import.meta.env.VITE_BASE_URL + p.cover.url} link={p.gitHub_Link} width="w-72" height="h-72">
+                                <Text className="text-white">{p.title}</Text>
+                            </Card>
+                        ))
+                    }
                 </Box>
             </Box>
         </Main>
