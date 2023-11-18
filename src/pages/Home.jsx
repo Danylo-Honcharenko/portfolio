@@ -13,27 +13,29 @@ import Java from "../assets/images/java.png";
 import Maven from "../assets/images/maven.png";
 import Docker from "../assets/images/docker.png";
 import Card from "../components/Card/Card.jsx";
-import {projects} from "../utils/rest/index.jsx";
+import {getProjects, getSkills} from "../utils/rest/swr.js";
 
 const Home = () => {
 
-    const skills = [
-        {skill: "Intellij IDEA"},
-        {skill: "Spring"},
-        {skill: "Maven"},
-        {skill: "Java, Html, CSS, JavaScript"},
-        {skill: "Docker"},
-        {skill: "SQL Databases"},
-        {skill: "React"},
+    const baseSkills = [
+        {id: 0},
+        {id: 1},
+        {id: 2},
+        {id: 3},
+        {id: 4},
+        {id: 5},
+        {id: 6},
     ];
 
-    // const projects = [
-    //     {name: "Book Parser", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-    //     {name: "Test", image: "/src/assets/images/std_card_img.png", link: "https://google.com"},
-    // ];
+    const baseProjects = [
+        {id: 0},
+        {id: 1},
+        {id: 2},
+        {id: 3},
+    ];
+
+    const {projects, isLoading} = getProjects();
+    const {skills} = getSkills();
 
     return (
         <Main>
@@ -61,9 +63,8 @@ const Home = () => {
                     <div>
                         <nav>
                             <ul className="text-[#484848] list-image-[url(/src/assets/images/checkmark.png)] ml-10">
-                                {skills.map((s, index) => (
-                                    <li key={index}>{s.skill}</li>
-                                ))}
+                                {isLoading ? baseSkills.map((s) => <li key={s.id}><div className="bg-slate-100 w-20 h-6"></div></li>)
+                                : skills?.map((s) => <li key={s.id}>{s.technology}</li>)}
                             </ul>
                         </nav>
                     </div>
@@ -100,10 +101,12 @@ const Home = () => {
                     </div>
                 </div>
                 <Box isFlex={true} className="mt-3 gap-2 projects_section">
-                    {
-                        projects().slice(0, 4).map((p, idx) => (
-                            <Card key={idx} image={import.meta.env.VITE_BASE_URL + p.cover.url} link={p.gitHub_Link} width="w-72" height="h-72">
-                                <Text className="text-white">{p.title}</Text>
+                    {isLoading ?
+                        baseProjects.map((p) => <Card key={p.id} className="bg-slate-50" width="w-72" height="h-72"></Card>)
+                        :
+                        projects?.slice(0, 4).map((p) => (
+                            <Card key={p.id} image="/src/assets/images/std_card_img.png" link={p.link_to_github} width="w-72" height="h-72">
+                                <Text className="text-white">{p.project_name}</Text>
                             </Card>
                         ))
                     }

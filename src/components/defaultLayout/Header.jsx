@@ -1,12 +1,12 @@
 import React from 'react';
 import "../../assets/scss/main.scss"
-import {routers} from "../../Routes/routes.js";
+import {publicRouters} from "../../Routes/routes.js";
 import Box from "../Box/Box.jsx";
 const Header = () => {
     return (
         <header>
             <Box className="header" isPadding={true}>
-                <a href={routers[0].path}>
+                <a href={publicRouters[0].path}>
                     <div className="flex items-center gap-2">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
@@ -21,7 +21,7 @@ const Header = () => {
                 <div className="menu">
                     <nav>
                         <ul className="flex gap-7 text-[#585858]">
-                            {routers.map((r, index) => (
+                            {publicRouters.map((r, index) => (
                                 <li key={index}><a href={r.path} className="hover:text-black">{r.name}</a></li>
                             ))}
                         </ul>

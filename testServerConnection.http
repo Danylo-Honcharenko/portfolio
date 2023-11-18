@@ -1,0 +1,11 @@
+### Get all projects
+GET http://localhost:1317/projects
+Accept: application/json
+
+### Get my technologystacks
+GET http://localhost:1317/my-technology-stacks
+Accept: application/json
+
+### Get CV
+GET http://localhost:1317/cv
+Accept: application/json
